@@ -7,8 +7,10 @@ import WelcomeScreen from "./src/screens/Welcome";
 import LoginScreen from "./src/screens/auth/Login";
 import SignupScreen from "./src/screens/auth/SignUp";
 import HomeScreen from "./src/screens/Home";
+import ExploreScreen from "./src/screens/Explore";
 
 import "./src/services/i18n";
+
 
 export type RootStackParamList = {
   Language: undefined;
@@ -16,6 +18,7 @@ export type RootStackParamList = {
   Login: undefined;
   Signup: undefined;
   Home: undefined;
+  Explore: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -23,16 +26,24 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Language"
-        screenOptions={{ headerShown: false }}
-      >
-        <Stack.Screen name="Language" component={LanguageScreen} />
-        <Stack.Screen name="Welcome" component={WelcomeScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Signup" component={SignupScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
+    
+    {/* No Bottom Nav screens */}
+    <Stack.Screen name="Login" component={LoginScreen} />
+    <Stack.Screen name="Signup" component={SignupScreen} />
+    <Stack.Screen name="Language" component={LanguageScreen} />
+    <Stack.Screen name="Welcome" component={WelcomeScreen} />
+
+    {/* Screens with bottom nav */}
+    <Stack.Screen name="Home" component={HomeScreen} />
+    <Stack.Screen name="Explore" component={ExploreScreen} />
+    
+    
+
+    {/* Other screens */}
+    
+    
+  </Stack.Navigator>
+</NavigationContainer>
   );
 }
