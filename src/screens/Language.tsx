@@ -19,6 +19,7 @@ type RootStackParamList = {
   Auth: undefined;
   Login: undefined;
   Signup: undefined;
+  Welcome: undefined;
 };
 
 
@@ -33,7 +34,7 @@ const LanguageScreen = () => {
     await i18n.changeLanguage(lang);
     await AsyncStorage.setItem("appLanguage", lang);
 
-    navigation.replace("Login"); // 👈 clean transition
+    navigation.replace("Welcome"); // 👈 clean transition
   } catch (error) {
     console.log("Language change error:", error);
   }
