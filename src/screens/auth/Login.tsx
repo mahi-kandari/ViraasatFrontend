@@ -54,7 +54,7 @@ const LoginScreen: React.FC = () => {
         <TouchableOpacity
           style={styles.backButton}
           activeOpacity={0.7}
-          onPress={() => navigation.goBack()}
+          onPress={() => navigation.navigate("LanguageScreen")}
         >
           <FontAwesome name="angle-left" size={24} color="#7A3B3B" />
         </TouchableOpacity>
