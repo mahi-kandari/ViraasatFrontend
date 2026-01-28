@@ -8,6 +8,7 @@ import LoginScreen from "./src/screens/auth/Login";
 import SignupScreen from "./src/screens/auth/SignUp";
 import HomeScreen from "./src/screens/Home";
 import ExploreScreen from "./src/screens/Explore";
+import BazaarScreen from "./src/screens/Bazaar";
 
 import "./src/services/i18n";
 
@@ -19,6 +20,7 @@ export type RootStackParamList = {
   Signup: undefined;
   Home: undefined;
   Explore: undefined;
+  Bazaar: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -37,6 +39,7 @@ export default function App() {
     {/* Screens with bottom nav */}
     <Stack.Screen name="Home" component={HomeScreen} />
     <Stack.Screen name="Explore" component={ExploreScreen} />
+    <Stack.Screen name="Bazaar" component={BazaarScreen} />
     
     
 

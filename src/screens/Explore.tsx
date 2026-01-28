@@ -18,6 +18,7 @@ type RootStackParamList = {
   Explore: undefined;
   Profile: undefined;
   Ellora: undefined;
+  Bazaar: undefined;
 };
 
 type ExploreScreenNavigationProp = NativeStackNavigationProp<
@@ -132,7 +133,8 @@ const Explore = ({ navigation }: { navigation: ExploreScreenNavigationProp }) =>
                   navigation.navigate("Home");
                 } else if (tab.nameKey === "profile") {
                   navigation.navigate("Profile");
-                }
+                } else if (tab.nameKey === "bazaar") {navigation.navigate("Bazaar");
+                } else if (tab.nameKey === "profile") navigation.navigate("Profile");
               }}
             >
               <FontAwesome
