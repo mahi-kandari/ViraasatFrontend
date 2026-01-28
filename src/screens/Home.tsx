@@ -22,7 +22,16 @@ import { useTranslation } from "react-i18next";
 
 /* ---------------- TYPES ---------------- */
 
-type HomeNavigationProp = NativeStackNavigationProp<any>;
+type RootStackParamList = {
+  Home: undefined;
+  Explore: undefined;
+  Bazaar: undefined;
+  Profile: undefined;
+  Ellora: undefined;
+  Settings: undefined;
+};
+
+type HomeNavigationProp = NativeStackNavigationProp<RootStackParamList, "Home">;
 
 type RecommendedSite = {
   id: number;
